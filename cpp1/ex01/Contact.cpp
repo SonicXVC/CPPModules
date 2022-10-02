@@ -1,9 +1,11 @@
 #include "Contact.hpp"
 
+Contact :: Contact() {}
+Contact :: ~Contact() {}
+
 void Contact :: setName(std :: string name) {
     Contact :: firstName = name;
 }
-
 
 void Contact :: setLast(std :: string last) {
     Contact :: lastName = last;
