@@ -1,0 +1,7 @@
+/Users/ameteori/projects/cppmodule/CPPModules
+ameteori@at-q4 CPPModules % cd cpp2/ex04
+ameteori@at-q4 ex04 % make
+make: Nothing to be done for `all'.
+ameteori@at-q4 ex04 % ./readFile
+File:
+qwe

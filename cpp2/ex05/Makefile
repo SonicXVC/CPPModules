@@ -1,10 +1,7 @@
-NAME = readFile
+NAME = harl
 
 SRCS =	main.cpp \
-
-#INC	=	
-
-INF =	*.replace \
+		Harl.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 OBJS_DIR = .obj
@@ -26,7 +23,6 @@ $(NAME):		$(addprefix $(OBJS_DIR)/, $(OBJS))
 
 clean:
 				$(RM) $(OBJS_DIR)
-				$(RM) $(INF)
 
 fclean:			clean
 				$(RM) $(NAME)
