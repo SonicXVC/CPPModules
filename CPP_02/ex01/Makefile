@@ -1,9 +1,9 @@
-NAME = brain
+NAME = fixed
 
 SRCS =	main.cpp \
+		Fixed.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
-
 OBJS_DIR = .obj
 
 CPP	= c++
