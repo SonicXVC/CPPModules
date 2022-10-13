@@ -1,37 +1,100 @@
 #include "Fixed.hpp"
 
-Fixed :: Fixed(void) : intToConvert(0) {
-    std :: cout << "Default constructor called" << std :: endl;
-}
+Fixed :: Fixed(void) : intToConvert(0) {}
 
 Fixed :: Fixed(const Fixed &others) {
-    std :: cout << "Copy constructor called" << std :: endl;
     *this = others;
 }
 
 Fixed :: Fixed(const int integer) {
-    std :: cout << "Int constructor called" << std :: endl;
     Fixed :: intToConvert = integer << raw;
 }
 
 Fixed :: Fixed(const float floating) {
-    std :: cout << "Float constructor called" << std :: endl;
     Fixed :: intToConvert = roundf(floating * 256);
 }
 
 Fixed &Fixed :: operator=(const Fixed &other) {
-    std :: cout << "Copy assingment constractor called" << std :: endl;
     if (this != &other)
         this->intToConvert = other.getRawBits();
     return *this;
 }
 
-Fixed :: ~Fixed(void) {
-    std :: cout << "Destructor called" << std :: endl;
+bool Fixed :: operator>(const Fixed &other) const {
+    return intToConvert > other.getRawBits();
 }
 
+bool Fixed :: operator<(const Fixed &other) const {
+    return intToConvert < other.getRawBits();
+}
+
+bool Fixed :: operator>=(const Fixed &other) const {
+    return intToConvert >= other.getRawBits();
+}
+
+bool Fixed :: operator<=(const Fixed &other) const {
+    return intToConvert <= other.getRawBits();
+}
+
+bool Fixed :: operator==(const Fixed &other) const {
+    return intToConvert == other.getRawBits();
+}
+
+bool Fixed :: operator!=(const Fixed &other) const {
+    return intToConvert != other.getRawBits();
+}
+
+Fixed Fixed :: operator+(const Fixed &other) const {
+    Fixed res;
+
+    res.setRawBits(intToConvert + other.getRawBits());
+    return res;
+}
+
+Fixed Fixed :: operator-(const Fixed &other) const {
+    Fixed res;
+
+    res.setRawBits(intToConvert - other.getRawBits());
+    return res;
+}
+
+Fixed Fixed :: operator*(const Fixed &other) const {
+    Fixed res(this->toFloat() * other.toFloat());
+
+    return res;
+}
+
+Fixed Fixed :: operator/(const Fixed &other) const {
+    Fixed res(this->toFloat() / other.toFloat());
+
+    return res;
+}
+
+Fixed &Fixed :: operator++(void) {
+    intToConvert++;
+    return *this;
+}
+
+Fixed &Fixed :: operator--(void) {
+    intToConvert--;
+    return *this;
+}
+
+Fixed Fixed :: operator++(int) {
+    Fixed res(*this);
+    *this = operator++();
+    return res;
+}
+
+Fixed Fixed :: operator--(int) {
+    Fixed res(*this);
+    *this = operator--();
+    return res;
+}
+
+Fixed :: ~Fixed(void) {}
+
 int Fixed :: getRawBits() const {
-    std :: cout << "raw\n";
     return intToConvert;
 }
 
@@ -45,6 +108,22 @@ int Fixed :: toInt() const {
 
 float Fixed :: toFloat() const {
     return (float)intToConvert / 256;
+}
+
+Fixed &Fixed :: min(Fixed &f1, Fixed &f2) {
+    return f1 < f2 ? f1 : f2;
+}
+
+const Fixed &Fixed :: min(const Fixed &f1, const Fixed &f2) {
+    return f1 < f2 ? f1 : f2;
+}
+
+Fixed &Fixed :: max(Fixed &f1, Fixed &f2) {
+    return f1 > f2 ? f1 : f2;
+}
+
+const Fixed &Fixed :: max(const Fixed &f1, const Fixed &f2) {
+    return f1 > f2 ? f1 : f2;
 }
 
 std :: ostream &operator<<(std :: ostream &stream, const Fixed &other) {
