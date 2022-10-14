@@ -9,6 +9,7 @@ class ClapTrap {
     public:
         ClapTrap();
         ClapTrap(std :: string _name);
+        ClapTrap(std :: string _name, int _attackDmg);
         ClapTrap(const ClapTrap &other);
         ClapTrap &operator=(const ClapTrap &other);
         ~ClapTrap();
@@ -20,10 +21,10 @@ class ClapTrap {
         unsigned int getNRG(void) const;
         unsigned int getAttackDmg(void) const;
     private:
-        std :: string   name;
         int             hp;
         int             energy;
-        int             attack;
+        std :: string   name;
+        int             attackDmg;
 };
 
 #endif
