@@ -1,18 +1,24 @@
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int main() {
-    // ClapTrap    first("First", 5);
-    // ClapTrap    second("Second", 10);
-    ClapTrap    first("First");
-    ScavTrap    second("Second");
+int	main(void) {
+        ScavTrap scav("Scav");
+        ScavTrap anotherScav;
+        ClapTrap clap("Clap");
 
-    first.attack("Second");
-    second.takeDamage(5);
-    second.attack("First");
-    first.takeDamage(10);
-    std :: cout << second.getName() << " " <<  second.getHP() << " hp left\n";
-    second.beRepaired(10);
+        scav.guardGate();
+        scav.attack("Clap");
+        scav.takeDamage(25);
+        scav.beRepaired(3);
+        anotherScav = scav;
+        anotherScav.takeDamage(30);
+        anotherScav.beRepaired(5);
 
-    return(0);
+        std :: cout << "------------------------------------------" << std ::endl;
+
+        clap.attack("enemy");
+        clap.takeDamage(9);
+        clap.beRepaired(1);
+        clap.takeDamage(1);
+        clap.beRepaired(2);
+    return 0;
 }

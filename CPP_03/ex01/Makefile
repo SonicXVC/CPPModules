@@ -2,6 +2,7 @@ NAME = claptrap
 
 SRCS =	main.cpp \
 		ClapTrap.cpp \
+		ScavTrap.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 OBJS_DIR = .obj
