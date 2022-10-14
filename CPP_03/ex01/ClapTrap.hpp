@@ -9,7 +9,7 @@ class ClapTrap {
     public:
         ClapTrap();
         ClapTrap(std :: string _name);
-        ClapTrap(std :: string _name, int _attackDmg);
+        // ClapTrap(std :: string _name, int _attackDmg);
         ClapTrap(const ClapTrap &other);
         ClapTrap &operator=(const ClapTrap &other);
         ~ClapTrap();

@@ -8,9 +8,9 @@ ClapTrap :: ClapTrap(std :: string _name) : hp(10), energy(10), name(_name), att
     std :: cout << "ClapTrap init constructor called" << std :: endl;
 }
 
-ClapTrap :: ClapTrap(std :: string _name, int _attackDmg) : hp(10), energy(10), name(_name), attackDmg(_attackDmg) {
-    std :: cout << "ClapTrap init with attackDMG constructor" << std :: endl;
-}
+// ClapTrap :: ClapTrap(std :: string _name, int _attackDmg) : hp(10), energy(10), name(_name), attackDmg(_attackDmg) {
+//     std :: cout << "ClapTrap init with attackDMG constructor" << std :: endl;
+// }
 
 ClapTrap :: ClapTrap(const ClapTrap &other) {
     std :: cout << "ClapTrap copy constructor called" << std :: endl;
@@ -68,7 +68,7 @@ void    ClapTrap :: takeDamage(unsigned int amount) {
             hp -= amount;
             std :: cout << name << " takes " << amount << " of DMG and still have " << hp << " hp\n";
         } else {
-            std :: cout << name << ": MAAAAAN, Im dead\n";
+            std :: cout << name << " takes " << amount << " of DMG and says: MAAAAAN, Im dead\n";
             hp = 0; 
         }
 }
