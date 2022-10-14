@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap :: ClapTrap() : hp(10), energy(10), name("unnamed"), attackDmg(0) {
+ClapTrap :: ClapTrap() : hp(10), energy(10), attackDmg(0) {
     std :: cout << "ClapTrap default constructor called" << std :: endl;
 }
 
