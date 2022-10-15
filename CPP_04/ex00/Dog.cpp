@@ -2,6 +2,7 @@
 
 Dog ::Dog(void) {
     std :: cout << "Dog: default constructor called" << std :: endl;
+    type = "Dog";
 }
 
 Dog ::Dog(const Dog &other) : Animal(other) {
