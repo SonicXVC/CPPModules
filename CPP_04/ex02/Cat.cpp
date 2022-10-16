@@ -6,7 +6,7 @@ Cat ::Cat(void) {
     brain = new Brain();
 }
 
-Cat ::Cat(const Cat &other) : Animal(other) {
+Cat ::Cat(const Cat &other) {
     *this = other;
     std :: cout << "Cat: copy constructor called" << std :: endl;
 }
@@ -18,6 +18,15 @@ Cat :: ~Cat(void) {
 
 Cat &Cat :: operator=(const Cat &other) {
     std :: cout << "Cat: Assignation constructor called" << std :: endl;
+    if (this != &other) {
+        type = other.getType();
+        *brain = *other.getBrain();
+    }
+    return *this;
+}
+
+Animal &Cat :: operator=(const Animal &other) {
+    std :: cout << "Animal Cat: Assignation constructor called" << std :: endl;
     if (this != &other) {
         type = other.getType();
         *brain = *other.getBrain();
