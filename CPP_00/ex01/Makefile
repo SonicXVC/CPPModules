@@ -7,7 +7,7 @@ SRCS =	Contact.cpp \
 INC	=	Contact.hpp \
 		PhoneBook.hpp \
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(SRCs:.cpp=.o)
 OBJS_DIR = .obj
 
 CPP	= c++

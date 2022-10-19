@@ -31,7 +31,6 @@ Fixed :: ~Fixed(void) {
 }
 
 int Fixed :: getRawBits() const {
-    std :: cout << "raw\n";
     return intToConvert;
 }
 
