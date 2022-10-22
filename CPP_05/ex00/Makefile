@@ -1,7 +1,6 @@
-NAME = phonebook
+NAME = bureaucrat
 
-SRCS =	PhoneBook.cpp \
-		Contact.cpp \
+SRCS =	Bureaucrat.cpp \
 		main.cpp \
 
 
@@ -20,7 +19,7 @@ $(OBJS_DIR)/%.o:		%.cpp
 
 all:			$(NAME)
 
-$(NAME):		$(addprefix $(OBJS_DIR)/, $(OBJS)) 
+$(NAME):		$(addprefix $(OBJS_DIR)/, $(OBJS))
 				$(CPP) $(CPP_FLAGS) $(addprefix $(OBJS_DIR)/, $(OBJS)) -o $(NAME)
 
 clean:
