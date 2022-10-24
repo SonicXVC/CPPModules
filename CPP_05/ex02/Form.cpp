@@ -1,5 +1,4 @@
 #include "Form.hpp"
-#include "Bureaucrat.hpp"
 
 Form :: Form() : flag(false), name(""), gradeSign(150), gradeExec(150) {
     std :: cout << "Form: default constructor called" << std :: endl;

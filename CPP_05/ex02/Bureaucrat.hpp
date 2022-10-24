@@ -3,7 +3,6 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include "Form.hpp"
 # include <iostream>
 
 class Form;
@@ -16,10 +15,11 @@ class Bureaucrat {
             ~Bureaucrat(void);
             Bureaucrat &operator=(const Bureaucrat &other);
             std :: string const &getName(void) const;
-            int                  getGrade(void) const;
-            void                 incGrade(void);
-            void                 decGrade(void);
-            void                 signForm(Form &f) const;
+            int                 getGrade(void) const;
+            void                incGrade(void);
+            void                decGrade(void);
+            void                signForm(Form &f) const;
+            void                executeForm(Form const &form);
             class GradeTooLowException : public std :: exception {
                 public:
                     virtual const char* what(void) const throw();

@@ -67,6 +67,17 @@ void Bureaucrat ::signForm(Form &f) const {
         std :: cout << name << " cannot sign " << f.getName() << std :: endl;
 }
 
+void Bureaucrat ::executeForm(const Form &form) {
+    try {
+        form.execute(*this);
+    }
+    catch (std :: exception &e) {
+        std :: cout << e.what() << std :: endl;
+        return ;
+    }
+    std :: cout << "Sign sucsessfull" << std :: endl;
+}
+
 std :: ostream &operator<<(std :: ostream &stream, const Bureaucrat &other) {
     stream << other.getName() << ", bureaucrat\'s grade " << other.getGrade() << std :: endl;
     return stream;

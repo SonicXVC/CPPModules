@@ -3,7 +3,6 @@
 # define FORM_HPP
 
 # include "Bureaucrat.hpp"
-# include <iostream>
 
 class Bureaucrat;
 
@@ -19,6 +18,7 @@ class Form {
             int             getGradeExec() const;
             bool            getState() const;
             void            beSigned(const Bureaucrat &b);
+            virtual void    execute(Bureaucrat const &executor) const = 0;
             class GradeTooHighException : public std :: exception {
                 public:
                     virtual const char* what() const throw();
@@ -32,10 +32,10 @@ class Form {
                     virtual const char* what() const throw();
             };
     private:
-            bool                flag;
-            const std :: string name;
-            const int           gradeSign;
-            const int           gradeExec;
+            bool            flag;
+            std :: string   name;
+            const int       gradeSign;
+            const int       gradeExec;
 };
 
 std :: ostream &operator<<(std :: ostream &stream, const Form &other);
