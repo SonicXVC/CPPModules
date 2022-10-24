@@ -12,7 +12,7 @@ class RobotomyRequestForm : public Form {
             RobotomyRequestForm(const RobotomyRequestForm &other);
             ~RobotomyRequestForm();
             RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
-            virtual std :: string       &getTarget() const;
+            virtual std :: string const &getTarget() const;
             virtual void                execute(Bureaucrat const &executor) const;
     private:
         std :: string target;

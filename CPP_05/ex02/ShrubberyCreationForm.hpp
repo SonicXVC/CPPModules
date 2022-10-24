@@ -12,9 +12,9 @@ class ShrubberyCreationForm : public Form {
             ShrubberyCreationForm(const ShrubberyCreationForm &other);
             ~ShrubberyCreationForm();
             ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
-            virtual std :: string       &getTarget() const;
+            virtual std :: string const &getTarget() const;
             virtual void                execute(Bureaucrat const &executor) const;
-            class FailNotOpened : public std :: exception {
+            class FileNotOpened : public std :: exception {
                 public:
                     virtual const char* what() const throw();
             };

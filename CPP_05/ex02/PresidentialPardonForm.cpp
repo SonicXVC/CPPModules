@@ -1,4 +1,6 @@
 #include "PresidentialPardonForm.hpp"
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 PresidentialPardonForm ::PresidentialPardonForm() : Form("PresidentialPardonForm", 10, 5){
     std :: cout << "PresidentialPardonForm: default constructor called" << std :: endl;
@@ -17,19 +19,21 @@ PresidentialPardonForm ::~PresidentialPardonForm() {
     std :: cout << "PresidentialPardonForm: default destructor called" << std :: endl;
 }
 
-PresidentialPardonForm &PresidentialPardonForm operator=(const PresidentialPardonForm &other) {
+PresidentialPardonForm &PresidentialPardonForm :: operator=(const PresidentialPardonForm &other) {
     if (this != &other)
         target = other.getTarget();
     std :: cout << "PresidentialPardonForm: assignment constructor called" << std :: endl;
     return *this;
 }
 
-std :: string &PresidentialPardonForm ::getTarget() const {
+std :: string const &PresidentialPardonForm ::getTarget() const {
     return target;
 }
 
 void PresidentialPardonForm :: execute(Bureaucrat const &executor) const {
        if (this->getState())
            throw IsSigned();
-       else
+       if (executor.getGrade() > this->getGradeExec() || executor.getGrade() > this->getGradeSign())
+           throw GradeTooLowException();
+       std :: cout << target << " has beed pardoned by Zaphod Beeblebrox" << std :: endl;
 }

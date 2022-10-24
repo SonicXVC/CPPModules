@@ -5,9 +5,9 @@ SRCS =	Bureaucrat.cpp \
 		main.cpp \
 		PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp \
-		ShrubberyCreationForm \
+		ShrubberyCreationForm.cpp \
 
-
+TREES = *_shrubbery \
 
 OBJS = $(SRCS:.cpp=.o)
 OBJS_DIR = .obj
@@ -32,5 +32,6 @@ clean:
 
 fclean:			clean
 				$(RM) $(NAME)
+				$(RM) $(TREES)
 
 re:				fclean $(NAME)

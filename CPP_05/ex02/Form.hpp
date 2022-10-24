@@ -3,6 +3,7 @@
 # define FORM_HPP
 
 # include "Bureaucrat.hpp"
+# include <fstream>
 
 class Bureaucrat;
 
@@ -11,7 +12,7 @@ class Form {
             Form();
             Form(std :: string _name, int gradeSign, int gradeExec);
             Form(const Form &other);
-            ~Form();
+            virtual     ~Form();
             Form &operator=(const Form &other);
             std :: string   const &getName() const;
             int             getGradeSign() const;
