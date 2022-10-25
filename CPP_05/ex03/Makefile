@@ -3,6 +3,7 @@ NAME = trees
 SRCS =	PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp \
 		ShrubberyCreationForm.cpp \
+		Intern.cpp \
 		Form.cpp \
 		Bureaucrat.cpp \
 		main.cpp \
@@ -10,6 +11,7 @@ SRCS =	PresidentialPardonForm.cpp \
 INC	= 	PresidentialPardonForm.hpp \
 		RobotomyRequestForm.hpp \
 		ShrubberyCreationForm.hpp \
+		Intern.hpp \
 		Form.hpp \
 		Bureaucrat.hpp \
 

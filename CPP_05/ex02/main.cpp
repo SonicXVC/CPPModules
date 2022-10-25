@@ -6,30 +6,30 @@
 
 int main(void) {
     {
-        Bureaucrat	b("bob", 1);
-        Form *sh = new ShrubberyCreationForm();
-        b.executeForm(*sh);
-        delete sh;
+        Bureaucrat	b("bob", 140);
+        Form *shrub = new ShrubberyCreationForm();
+        b.executeForm(*shrub);
+        delete shrub;
     }
     std :: cout << "------------------------------" << std :: endl;
     {
         Bureaucrat	b("bob", 15);
-        Form *putin = new PresidentialPardonForm();
-        b.executeForm(*putin);
-        delete putin;
+        Form *pres = new PresidentialPardonForm();
+        b.executeForm(*pres);
+        delete pres;
     }
     std :: cout << "------------------------------" << std :: endl;
     {
         Bureaucrat	b("bob", 60);
-        Form *rob = new RobotomyRequestForm();
-        b.executeForm(*rob);
-        delete rob;
+        Form *robot = new RobotomyRequestForm();
+        b.executeForm(*robot);
+        delete robot;
     }
     std :: cout << "------------------------------" << std :: endl;
     {
-        Bureaucrat	a("nadia", 2);
-        Bureaucrat	b("vladimir", 1);
-        Bureaucrat	c("alena", 2);
+        Bureaucrat	a("bob1", 2);
+        Bureaucrat	b("bob2", 1);
+        Bureaucrat	c("bob3", 2);
 
         Form	*trees = new RobotomyRequestForm("push_swap");
         a.executeForm(*trees);
@@ -37,9 +37,9 @@ int main(void) {
         Form	*robot = new ShrubberyCreationForm("Christmas");
         c.executeForm(*robot);
         delete robot;
-        Form	*volodya = new PresidentialPardonForm("Russia");
-        b.executeForm(*volodya);
-        delete volodya;
+        Form	*pres = new PresidentialPardonForm("Russia");
+        b.executeForm(*pres);
+        delete pres;
     }
     return 0;
 }
