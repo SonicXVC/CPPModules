@@ -31,13 +31,13 @@ int main(void) {
         Bureaucrat	b("bob2", 1);
         Bureaucrat	c("bob3", 2);
 
-        Form	*trees = new RobotomyRequestForm("push_swap");
+        Form	*trees = new RobotomyRequestForm("sdfghj");
         a.executeForm(*trees);
         delete trees;
-        Form	*robot = new ShrubberyCreationForm("Christmas");
+        Form	*robot = new ShrubberyCreationForm("Tree");
         c.executeForm(*robot);
         delete robot;
-        Form	*pres = new PresidentialPardonForm("Russia");
+        Form	*pres = new PresidentialPardonForm("Bob");
         b.executeForm(*pres);
         delete pres;
     }

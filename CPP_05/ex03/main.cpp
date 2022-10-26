@@ -1,8 +1,5 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
 #include "Intern.hpp"
 
 int main(void) {
@@ -32,6 +29,17 @@ int main(void) {
         pres = intern.makeForm("PresidentialPardonForm", "buba");
         b.executeForm(*pres);
         delete pres;
+    }
+    {
+        Bureaucrat  b("bob", 1);
+        Form        *pres;
+        Intern      intern;
+
+        pres = intern.makeForm("asdfg", "buba");
+        if (pres) {
+            b.executeForm(*pres);
+            delete pres;
+        }
     }
     return 0;
 }

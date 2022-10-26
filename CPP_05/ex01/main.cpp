@@ -21,7 +21,7 @@ int main(void) {
     try {
         Form f("f3", 100, 105);
         std :: cout << f;
-        Bureaucrat bob1("Bob", 140);
+        Bureaucrat bob1("Bob", 90);
         std :: cout << bob1;
         f.beSigned(bob1);
         std :: cout << f;
